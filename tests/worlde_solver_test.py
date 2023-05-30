@@ -1,5 +1,5 @@
 import unittest
-from Backend.Exceptions import IllegalArgumentException
+from Backend.Exceptions.IllegalArgumentException import IllegalArgumentException
 from Backend.WordleSolver import WordleSolver
 
 class wordle_solver_tests(unittest.TestCase):

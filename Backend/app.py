@@ -1,5 +1,4 @@
 from flask import Flask, request
-import json
 from WordleSolver import WordleSolver
 
 app = Flask(__name__)
