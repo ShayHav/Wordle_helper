@@ -1,13 +1,16 @@
-from flask import Flask, request
+from flask import Flask, request, render_template
 from WordleSolver import WordleSolver
 
-app = Flask(__name__)
+app = Flask(__name__,
+            static_url_path='',
+            static_folder='../static',
+            template_folder='../templates')
 
 
 @app.get('/')
 def index():
     if not request.is_json:
-        return 'unsupported format', 400
+        return render_template('index.html')
     data = request.get_json()
     
     try:
@@ -21,3 +24,5 @@ def index():
     except Exception as e:
         return 'json lack the supporting data', 400    
 
+if __name__ == '__main__':
+    app.run()
