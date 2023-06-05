@@ -22,6 +22,7 @@ def index():
         return words
 
     except Exception as e:
+        print(e)
         return 'json lack the supporting data', 400    
 
 if __name__ == '__main__':

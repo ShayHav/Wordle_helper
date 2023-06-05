@@ -9,6 +9,12 @@ class WordleSolver:
         self._green_letters = green_letters
         self._yellow_letters = [set(i) for i in yellow_letters]
         self._letters_pool = set(string.ascii_lowercase) - set(grey_letters)
+        must_contains = set(self._green_letters)
+        must_contains.remove('*')
+        for lst in self._yellow_letters:
+            must_contains = must_contains.union(lst)
+        self.must_contains = must_contains
+        
 
 
     def check_list(lst: list[str]) -> None:
@@ -32,13 +38,21 @@ class WordleSolver:
         return self._letters_pool - self._yellow_letters[indx]
         
     
+    def check_valid_word(self, word: str) -> set:
+        for letter in self.must_contains:
+            if letter not in word:
+                return False
+            
+        return True
+    
+
     def solve(self) -> list[str]:
         words = []
         english_dict = enchant.Dict('en_US')
         options = [self.get_options(i) for i in range(5)]
         for word_arr in product(*options):
             word = "".join(word_arr)
-            if english_dict.check(word):
+            if english_dict.check(word) and self.check_valid_word(word):
                 words.append(word)
         return words
             
