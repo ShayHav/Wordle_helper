@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Wordle Solver</title>
     <link rel="stylesheet" href="/styles/style.css">
-    <script src="/js/index.js"></script>
+    <script src="/js/index.js" async></script>
 </head>
 <body>
     <main>
@@ -14,42 +14,45 @@
         <form method="get">
         <div class="row">
             <div class="container">
-                <input class="green" type="text"/>
+                <input id="green0" class="green" type="text"/>
             </div>
             <div class="container">
-                <input class="green" type="text"/>
+                <input id="green1" class="green" type="text"/>
             </div>
             <div class="container">
-                <input class="green" type="text"/>
+                <input id="green2" class="green" type="text"/>
             </div>
             <div class="container">
-                <input class="green" type="text"/>
+                <input id="green3" class="green" type="text"/>
             </div>
             <div class="container">
-                <input class="green" type="text"/>
+                <input id="green4" class="green" type="text"/>
             </div>
           
         </div>
         <div class="row">
             <div class="container">
-                <input class="yellow" type="text"/>
+                <input id="yellow0" class="yellow" type="text"/>
             </div>
             <div class="container">
-                <input class="yellow" type="text"/>
+                <input id="yellow1" class="yellow" type="text"/>
             </div>
             <div class="container">
-                <input class="yellow" type="text"/>
+                <input id="yellow2" class="yellow" type="text"/>
             </div>
             <div class="container">
-                <input class="yellow" type="text"/>
+                <input id="yellow3" class="yellow" type="text"/>
             </div>
             <div class="container">
-                <input class="yellow" type="text"/>
+                <input id="yellow4" class="yellow" type="text"/>
             </div>
           
         </div>
+        <div class="row container">
+            <input type="text" name="grey" id="grey" class="grey"> 
+        </div>
         <div class="button-container">
-            <button class="solve-btn" type="submit">Solve</button>
+            <button id="solveBtn" class="solve-btn" type="submit">Solve</button>
         </div>
     </form>
     </main>
